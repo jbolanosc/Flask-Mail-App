@@ -5,14 +5,14 @@ from send_email import send_mail
 app = Flask(__name__)
 
 
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Samyto06@localhost/ToyotaRentDB'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zvcgebxcdnutma:9a4cea7a41e491a6c362225819e558890ec1ca6ea834d85dfb9273fb02087147@ec2-107-21-120-104.compute-1.amazonaws.com:5432/d8v7mbo54m4b2i'
 
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
